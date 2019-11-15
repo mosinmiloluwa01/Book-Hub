@@ -1,0 +1,26 @@
+.header {
+  background-color: #ffe9d2;
+  border-bottom: 10px solid #FFE1C4;
+  color: #FF8816;
+  width: 100%;
+  height: 56px;
+  line-height: 30px;
+  text-align: center;
+  position: relative;
+}
+
+.title {
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  font-family: 'Comic Sans MS';
+}
+
+.title span{
+  font-weight: bold;
+}
+
+.header a {
+  text-decoration: none;
+  color: #FF8816;
+  font-family: 'Comic Sans MS';
+}
