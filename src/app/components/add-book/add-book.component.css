@@ -1,0 +1,17 @@
+.form {
+    display: flex;
+  }
+  
+  .form input[type='text'] {
+    flex: 15;
+    padding: 10px;
+  }
+  
+  .form input[type='submit'] {
+    flex: 2;
+    background: #B4681F;
+    color: #fff;
+    padding: 10px;
+    font-size: 1rem;
+    font-family: 'Comic Sans MS';
+  }

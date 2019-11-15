@@ -1,0 +1,11 @@
+  
+<div class="book-card">
+    <div class="book-card-item-title">
+      <p class="book-title">{{book.name}}</p>
+    </div>
+  
+    <div class="book-card-container book-card-item-button">
+      <button class="del" (click)="openModal(book.id)"><i class="fas fa-pencil-alt"></i></button>
+      <p class="del" (click)="onDelete(book)"><i class="fas fa-trash"></i></p>
+    </div>
+  </div>
