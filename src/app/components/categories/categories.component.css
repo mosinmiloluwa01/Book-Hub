@@ -1,0 +1,14 @@
+.container {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.page-title {
+    font-family: 'system-ui';
+    color: #676565;
+    text-align: center;
+    margin-top: 1rem;
+  }

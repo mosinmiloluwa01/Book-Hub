@@ -1,0 +1,9 @@
+<div>
+  <app-add-book (addBook)="addBook($event)"></app-add-book>
+  <h2 class="page-title">Books</h2>
+  <app-book-item
+  *ngFor="let bookItem of books" 
+  [book]= "bookItem"
+  (deleteBook)="deleteBook($event)"
+  ></app-book-item>
+</div>
