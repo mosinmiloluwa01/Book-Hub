@@ -1,11 +1,15 @@
- <div>
+
      <div>
+         <app-category></app-category>
+
          <app-add-category (addCategory)="addCategory($event)"></app-add-category>
+
          <h2 class="page-title">Categories</h2>
+         <div class="category-container">
          <app-category-item
          *ngFor="let categoryItem of categories" 
          [category]= "categoryItem"
          (deleteCategory)="deleteCategory($event)"
          ></app-category-item>
+        </div>
      </div>
-  </div>

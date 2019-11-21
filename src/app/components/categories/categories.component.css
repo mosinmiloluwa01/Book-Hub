@@ -12,3 +12,21 @@
     text-align: center;
     margin-top: 1rem;
   }
+
+  .category-container {
+    display: flex;
+    margin: 2rem 20rem;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .category-container {
+      margin: 0.3rem 1.2rem;
+    }
+  }
+  @media only screen and (max-width: 800px) {
+    .category-container {
+      margin: 0.3rem 1.2rem;
+    }
+  }

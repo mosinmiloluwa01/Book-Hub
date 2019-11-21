@@ -1,11 +1,12 @@
-<div class="category-container">
+
     <div class="category-card">
       <div class="category-card-item-title">
         <p class="category-title">{{category.name}}</p>
       </div>
-      <div class="category-card-item-button">
+
+      <div class="category-card-container category-card-item-button">
+        <button class="del" (click)="openModal(category)"><i class="fas fa-pencil-alt"></i></button>
         <p class="del" (click)="onDelete(category)"><i class="fas fa-trash"></i></p>
       </div>
     </div>
-  </div>
   

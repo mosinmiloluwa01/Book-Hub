@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ModalModule } from './components/modal/modal.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,7 @@ import { CategorySidebarComponent } from './components/category-sidebar/category
 import { BooksComponent } from './components/pages/books/books.component';
 import { BookItemComponent } from './components/book-item/book-item.component';
 import { AddBookComponent } from './components/add-book/add-book.component';
+import { CategoryComponent } from './components/modals/category/category.component';
 
 @NgModule({
   declarations: [
@@ -24,13 +26,15 @@ import { AddBookComponent } from './components/add-book/add-book.component';
     CategorySidebarComponent,
     BooksComponent,
     BookItemComponent,
-    AddBookComponent
+    AddBookComponent,
+    CategoryComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ModalModule
   ],
   providers: [],
   bootstrap: [AppComponent]

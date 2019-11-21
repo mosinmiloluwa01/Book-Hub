@@ -30,4 +30,8 @@ export class CategoriesComponent implements OnInit {
     this.categoryService.deleteCategory(category).subscribe();
   }
 
+  updateCategory(book) {
+    console.log('it got to books component>>>', book)
+  }
+
 }

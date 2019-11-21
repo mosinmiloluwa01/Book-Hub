@@ -30,4 +30,8 @@ export class BooksComponent implements OnInit {
     this.bookService.deleteBook(book).subscribe();
   }
 
+  updateBook(book) {
+    console.log('it got to books component>>>', book)
+  }
+
 }

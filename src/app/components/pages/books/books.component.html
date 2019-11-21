@@ -1,9 +1,30 @@
 <div>
+  <!-- <app-modals (updateBook)="updateBook($event)" [bookItem]="books"></app-modals> -->
+
   <app-add-book (addBook)="addBook($event)"></app-add-book>
+
   <h2 class="page-title">Books</h2>
+  
+  <div class="book-container">
   <app-book-item
   *ngFor="let bookItem of books" 
   [book]= "bookItem"
   (deleteBook)="deleteBook($event)"
   ></app-book-item>
 </div>
+</div>
+
+<app-modal id="editBookModal">
+    <div class="modal-content">
+        <div class="modal-title-section">
+          <h3 class="modal-title">Update Book</h3>
+          <span class="close" (click)="closeModal()">&times;</span>
+        </div>
+        <form class="form-container" (ngSubmit)="onSubmit()">
+          <div class="form-content">
+            <input type="text" name="name" placeholder="input new name here...">
+            <input type="submit" value="update">
+          </div>
+          </form>
+      </div>
+</app-modal>

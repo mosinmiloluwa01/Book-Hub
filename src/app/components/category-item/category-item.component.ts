@@ -7,6 +7,7 @@ import { Category } from '../../models/category';
   styleUrls: ['./category-item.component.css']
 })
 export class CategoryItemComponent implements OnInit {
+  modal = document.getElementById("myModal");
   @Input() category: Category;
   @Output() deleteCategory: EventEmitter<Category> = new EventEmitter;
 
@@ -17,6 +18,11 @@ export class CategoryItemComponent implements OnInit {
 
   onDelete(category) {
     this.deleteCategory.emit(category);
+  }
+
+  openModal(category) {
+    this.modal.style.display = "block";
+    console.log('book>>>', category);
   }
 
 }
