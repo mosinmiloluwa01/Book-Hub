@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { Book } from '../../models/book';
+import { ModalService } from 'src/app/services/modal/modal.service';
 
 @Component({
   selector: 'app-book-item',
@@ -7,10 +8,12 @@ import { Book } from '../../models/book';
   styleUrls: ['./book-item.component.css']
 })
 export class BookItemComponent implements OnInit {
+  modal = document.getElementById("updateModal");
   @Input() book: Book;
   @Output() deleteBook: EventEmitter<Book> = new EventEmitter;
+  @Output() selectBook: EventEmitter<Book> = new EventEmitter;
 
-  constructor() { }
+  constructor(private modalService: ModalService) { }
 
   ngOnInit() {
   }
@@ -19,4 +22,8 @@ export class BookItemComponent implements OnInit {
     this.deleteBook.emit(book);
   }
 
+  openModal(book) {
+    this.selectBook.emit(book);
+    this.modalService.open(this.modal);
+  }
 }

@@ -29,4 +29,8 @@ export class BookService {
   deleteBook(book):Observable<Book> {
     return this.http.delete<Book>(`${this.baseUrl}/${book.id}`, httpOptions);
   }
+
+  updateBook(book):Observable<any> {
+    return this.http.put(`${this.baseUrl}/${book.id}`, book, httpOptions)
+  }
 }

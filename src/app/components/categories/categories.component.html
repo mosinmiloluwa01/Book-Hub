@@ -1,11 +1,55 @@
- <div>
-     <div>
-         <app-add-category (addCategory)="addCategory($event)"></app-add-category>
-         <h2 class="page-title">Categories</h2>
-         <app-category-item
-         *ngFor="let categoryItem of categories" 
-         [category]= "categoryItem"
-         (deleteCategory)="deleteCategory($event)"
-         ></app-category-item>
-     </div>
-  </div>
+<div>
+  <app-modal 
+  [categoryItem]="selectedCategory"
+  [modalTitle] = "title"
+  [modalId]="updateModalId"
+  >
+  <form class="form-container" (ngSubmit)="onSubmit($event)">
+      <div class="form-content">
+          <input type="text" [(ngModel)]="selectedCategory.name" name="name" placeholder="input new name here...">
+          <input type="submit" value="Update">
+      </div>
+  </form>
+  </app-modal>
+
+  <app-modal 
+  [modalTitle] = "addTitle"
+  [modalId]="addModalId"
+  >
+    <form class="form-container" (ngSubmit)="addBook($event)">
+      <div class="form-content">
+          <div class="custom-select" >
+            <select (change)="selectBook($event.target.value)">
+              <option value="0" >select a book...</option>
+              <option  *ngFor="let book of bookCategories" value="{{book.id}}" >{{book.name}}</option>
+            </select>
+            </div>
+        <input type="submit" value="Add">
+    </div>
+  </form>
+  </app-modal>
+
+  <app-add-category (addCategory)="addCategory($event)"></app-add-category>
+
+  <h2 class="page-title">Categories</h2>
+
+  <div class="category-container">
+    <app-category-item
+    *ngFor="let categoryItem of categories" 
+    [category]= "categoryItem"
+    (deleteCategory)="deleteCategory($event)"
+    (selectCategory)="selectCategory(categoryItem)"
+    (setModalStatus)="setModalStatus('clicked')"
+    ></app-category-item>
+
+<app-modal 
+[categoryItem]="selectedCategory"
+[modalTitle] = "booksInCategory"
+[modalId]="bookModalId"
+>
+<div *ngIf="retrievalStatus === 'clicked' else getBooksInCategory(selectedCategory)"></div>
+<ul class="book-list">
+  <li *ngFor="let book of booksInACategory">{{book.name}}</li>
+</ul>
+</app-modal>
+</div>

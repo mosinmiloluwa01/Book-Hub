@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CategorySidebarComponent } from './category-sidebar.component';
+import { ModalComponent } from './modal.component';
 
-describe('CategorySidebarComponent', () => {
-  let component: CategorySidebarComponent;
-  let fixture: ComponentFixture<CategorySidebarComponent>;
+describe('ModalComponent', () => {
+  let component: ModalComponent;
+  let fixture: ComponentFixture<ModalComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CategorySidebarComponent ]
+      declarations: [ ModalComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CategorySidebarComponent);
+    fixture = TestBed.createComponent(ModalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -9,10 +9,10 @@ import { HeaderComponent } from './components/layout/header/header.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { CategoryItemComponent } from './components/category-item/category-item.component';
 import { AddCategoryComponent } from './components/add-category/add-category.component';
-import { CategorySidebarComponent } from './components/category-sidebar/category-sidebar.component';
 import { BooksComponent } from './components/pages/books/books.component';
 import { BookItemComponent } from './components/book-item/book-item.component';
 import { AddBookComponent } from './components/add-book/add-book.component';
+import { ModalComponent } from './components/modals/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -21,10 +21,10 @@ import { AddBookComponent } from './components/add-book/add-book.component';
     CategoriesComponent,
     CategoryItemComponent,
     AddCategoryComponent,
-    CategorySidebarComponent,
     BooksComponent,
     BookItemComponent,
-    AddBookComponent
+    AddBookComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,

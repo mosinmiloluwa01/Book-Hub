@@ -1,0 +1,9 @@
+<div id="{{modalId}}" class="modal">
+  <div class="modal-content">
+    <div class="modal-title-section">
+    <h3 class="modal-title">{{ modalTitle }}</h3>
+    <span class="close" (click)="closeModal($event)">&times;</span>
+    </div>
+      <ng-content></ng-content>
+  </div>
+</div>

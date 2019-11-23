@@ -25,8 +25,18 @@ export class CategoryService {
   addCategory(category):Observable<any> {
     return this.http.post<Category>(`${this.baseUrl}/categories`, category, httpOptions);
   }
+  addBookToCategory(category):Observable<any> {
+    return this.http.post<Category>(`${this.baseUrl}/categories/${category.id}/book`, category, httpOptions);
+  }
+  getBooksInCategory(category):Observable<any> {
+    return this.http.get(`${this.baseUrl}/categories/${category.id}/books`);
+  }
 
   deleteCategory(category):Observable<Category> {
     return this.http.delete<Category>(`${this.baseUrl}/categories/${category.id}`, httpOptions);
+  }
+
+  updateCategory(category):Observable<any> {
+    return this.http.put(`${this.baseUrl}/categories/${category.id}`, category, httpOptions)
   }
 }
